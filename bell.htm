@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/2a1889b53c.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="cap">
+    <p>Wow</p>
+
+    <i class="fa fa-bell" id="bell" aria-hidden="true">6</i>
+</div>
+
+<style>
+    .cap
+    {
+        background-color: blue;
+        color:white;
+    }
+    i
+    {
+        position: relative;
+      left: 100px;
+        top:-29px;
+        font-size: 24px;
+
+    }
+</style>
+<script>
+    function loadDoc() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("bell").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "bell.php", true);
+        xhttp.send();
+    }
+    loadDoc();
+</script>
+</body>
+</html>
